@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+group = 'com.english.mobileexam'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+jar{
+
+    manifest {
+        attributes(
+                'Main-Class': 'com.english.mobileexam.Main'
+        )
+    }
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'commons-io:commons-io:2.16.1'
+}
+
+test {
+    useJUnitPlatform()
+}
